@@ -37,8 +37,17 @@
    const [getm, setm] = useState('1');
    const [getWinner, setWinner] = useState('');
    const [modalVisible, setModalVisible] = useState(false);
+   const [getModelDraw , setModelDraw] = useState(false)
      useEffect(() => {
-       if (
+      if (
+        getMark11 !== '.' &&  getMark12 !=='.' && getMark13 !== '.' &&
+        getMark21 !== '.' &&  getMark22 !=='.' && getMark23 !== '.' &&
+        getMark31 !== '.' &&  getMark32 !=='.' && getMark33 !== '.' &&
+        getWinner == ''
+       ){
+         setModelDraw(true)
+       }
+       else if (
        (getMark11 === 'X' && getMark12 === 'X' && getMark13 === 'X') ||
        (getMark21 === 'X' && getMark22 === 'X' && getMark23 === 'X') ||
        (getMark31 === 'X' && getMark32 === 'X' && getMark33 === 'X') ||
@@ -62,8 +71,8 @@
      ) {
        setWinner("Player 2")
       setModalVisible(true)
-     
    }
+   
      });
       
    const PlayAgain= () =>{
@@ -187,6 +196,16 @@
  <Modal visible={modalVisible} >
  <Text style={styles.modalTitle}>Winner!</Text>
  <Text style={styles.modalClass}>{getWinner}</Text>
+ <Button
+   onPress={PlayAgain}
+   title="Play Again"
+   color="#841584"
+   marginTop = "20"
+  />
+ </Modal>
+ <Modal visible={getModelDraw} >
+ <Text style={styles.modalTitle}>Game Draw!</Text>
+ 
  <Button
    onPress={PlayAgain}
    title="Play Again"
