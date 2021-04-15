@@ -62,9 +62,7 @@
      ) {
        setWinner("Player 2")
       setModalVisible(true)
-     // setWinner("row 1"+" "+getMark11+","+getMark12+", "+getMark13+
-     //   "row 2"+" "+getMark21+","+getMark22+", "+getMark23+
-     //   "row 3"+" "+getMark31+","+getMark32+", "+getMark33);
+     
    }
      });
       
